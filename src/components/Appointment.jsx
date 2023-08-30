@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import {SyncLoader} from 'react-spinners'
+
 import DatePicker from "react-datepicker";
 import axios from "axios";
 import "react-datepicker/dist/react-datepicker.css";
@@ -73,12 +75,15 @@ const Appointment = () => {
       // console.log(data.payload)
     }
   };
+  let [l,setL]=useState(false)
   const bookSlots = async () => {
+    setL(true)
     let res = await axios.post(`${global.url}booking/book-slot`, {
       date: dfs,
       slotIdx: selected,
       email: users.isNewuser.email,
     });
+    setL(false)
     res = res.data;
     if (res.message == "booking confirm") {
       slots[selected] = 3;
@@ -169,11 +174,16 @@ const Appointment = () => {
           </div>
         </div>
         <div className="bapp">
-          {selected == null ? (
+         {l?<SyncLoader cssOverride={{marginLeft:"7vmax"}} color={"red"} style={{marginBottom:"50vh"}} size={"1vmax"}   />:(selected == null ? (
             <button onClick={ss}>Book Appointment</button>
           ) : (
             <button onClick={bookSlots}>Book Appointment</button>
-          )}
+          ))}
+          {/* {selected == null ? (
+            <button onClick={ss}>Book Appointment</button>
+          ) : (
+            <button onClick={bookSlots}>Book Appointment</button>
+          )} */}
         </div>
       </div>
       <ToastContainer/>
