@@ -5,6 +5,8 @@ import axios from "axios";
 import { fetchUsers } from "../reducers/userReducer";
 import { useSelector,useDispatch } from "react-redux";
 import {HashLoader} from 'react-spinners'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import '../const.js';
 const Login = () => {
   const [email, setEmail] = useState(null);
@@ -21,6 +23,30 @@ const Login = () => {
     });
     setLoad(false)
     setStatus(data.message);
+    if(data.message=="Success"){
+      toast.success("otp sent",{
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        })
+    }
+    else{
+      toast.error("otp not sent", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        })
+    }
     console.log(data);
   };
   const verifyOtp = async () => {
@@ -78,6 +104,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <ToastContainer/>
     </>
   );
 };
