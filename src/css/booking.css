@@ -1,0 +1,30 @@
+.book-sc{
+    display: flex;
+    flex-direction: column;
+    width: 15vmax;
+    height: 11vmax;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0,0,0,.3);
+    margin: 1vmax;
+}
+.cancel-appointment>button{
+    padding: .4vmax;
+    width: 10vmax;
+    background-color:red;
+    color: white;
+    border-radius: 1vmax;
+    border: none;
+    cursor: pointer;
+    
+}
+.cancel-appointment>button:active{
+    transform: scale(.9);
+    transition: all .4s linear;
+}
+@media screen and (max-width:500px) {
+    .book-sc{
+        width: 24vmax;
+        height: 18vmax;
+    }
+}

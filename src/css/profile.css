@@ -1,0 +1,30 @@
+.p{
+    width: 20vmax;
+    height: 20vmax;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 8vw;
+    top: 7vh;
+    display: none;
+}
+.p>div{
+    margin: auto auto;
+}
+.logout>button{
+    width:15vmax;
+    padding: .5vmax;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 1vmax;
+}
+.p>div>a{
+    text-decoration: none;
+    font-size: 1.5vmax;
+    
+}
+.p>div>a:hover{
+    color:red;
+}

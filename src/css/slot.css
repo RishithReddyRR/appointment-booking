@@ -1,0 +1,20 @@
+.slot{
+    cursor: pointer;
+
+}
+@media screen and (max-width: 1286px){
+    .slot{
+        width:3vmax !important;
+        height: 3vmax;
+        font-size: 1.2vmax;
+        
+    }
+}
+@media screen and (max-width: 420px){
+    .slot{
+        width: 6vmax !important;
+        height: 6vmax;
+        font-size: 2vmax;
+    }
+}
+

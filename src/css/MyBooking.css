@@ -1,0 +1,55 @@
+.app{
+    margin-top: 5vmax;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+.mail>p{
+    font-size: 1.5vmax;
+    color: #0000ff;
+}
+.my-appointments >button{
+    padding: .7vmax;
+    background-color:rgb(0, 255, 0);
+    border: none;
+    color: white;
+    width: 20vmax;
+    font-size: 1.3vmax;
+    border-radius: 2vmax;
+    cursor: pointer;
+}
+.my-appointments >button:hover{
+    background-color: #ff9933;
+    transition: all .5s ease-in-out;
+}
+.my-appointments >button:active{
+    transform: scale(.9);
+    transition: all .4s linear;
+}
+.app-disp{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 60vw;
+    /* max-width: 70vw; */
+    margin-top: 1vmax;
+    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0px 5px 10px rgba(0,0,0,.3);
+    height: 60vh;
+    overflow: auto;
+}
+
+@media screen and (max-width: 1388px){
+    .mail >p,.my-appointments>button{
+        font-size:2vmax;
+    }
+}
+@media screen and (max-width: 500px){
+    .app-disp{
+        width: 90vw;
+        height: 78vh;
+    }
+}
