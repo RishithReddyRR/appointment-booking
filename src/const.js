@@ -1,1 +1,1 @@
-global.url="http://localhost:3015/"
+global.url="https://oneshot-ai-be.vercel.app"
